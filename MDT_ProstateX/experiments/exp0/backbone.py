@@ -13,6 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+#
+# CHANGELOG:
+#
+# Parameter cf.n_blocks in FPN class is no longer the name of a model, but rather the
+# number of convolutions per layer directly, which allows to customize the architecture
+# a bit more
 
 import torch.nn as nn
 import torch.nn.functional as F

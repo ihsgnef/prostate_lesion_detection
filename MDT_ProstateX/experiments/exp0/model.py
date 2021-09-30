@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Copyright 2021 Oscar J. Pellicer-Valero
 # Copyright 2018 Division of Medical Image Computing, German Cancer Research Center (DKFZ).
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+#
+# CHANGELOG:
+#
+# compute_class_loss has been modified to ignore class 21 for the purposes of 
+# classification (allowing us to also train with ProstateX challenge test set)
+# If you are using 20 classes or more, consider using a different ID for the missing
+# classification class (e.g.: 1000)
+# refine_detections was giving an error due to a bug in:
+# keep_arr = torch.cat(((keep_ix // fg_probs.shape[1]) etc.
+# Integer division `//` before was float division `/`, which made the training fail
 
 """
 Retina Net. According to https://arxiv.org/abs/1708.02002

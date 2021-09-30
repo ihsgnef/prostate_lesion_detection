@@ -31,7 +31,7 @@ conda create -n prostate_lesion python=3.7
 conda activate prostate_lesion
 
 #Install required libraries. Using conda:
-conda install matplotlib numpy ipywidgets ipython scipy pandas==0.25.3 jupyter ipython scikit-learn
+conda install matplotlib numpy==1.19.5 ipywidgets ipython scipy pandas==0.25.3 jupyter ipython scikit-learn
 conda install SimpleITK==1.2.4 -c simpleitk
 conda install pydicom -c conda-forge
 #pip install matplotlib numpy ipywidgets ipython scipy simpleitk==1.2.4 pandas==0.25.3 pydicom jupyter ipython scikit-learn
